@@ -27,7 +27,7 @@
     "eslint": "^5.6.0",
     "eslint-plugin-babel": "^5.2.0",
     "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^21.26.2",
+    "eslint-plugin-jest": "^23.13.2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-mocha": "^6.3.0",
     "eslint-plugin-no-unsanitized": "^3.1.1",
