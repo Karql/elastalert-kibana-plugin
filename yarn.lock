@@ -115,10 +115,10 @@
 "@elastic/eslint-import-resolver-kibana@link:../kibana/packages/kbn-eslint-import-resolver-kibana":
   version "0.0.0"
 
-"@elastic/eui@^25.0.0":
-  version "25.0.0"
-  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-25.0.0.tgz#3bf293d3516192021e90d5f8282c122fb69792f9"
-  integrity sha512-VAAQox4oiGQhI4cFDe+6FxG0pc8neoZVF6uIHiqBEPqZJGGKiYA8U+AuOSpAG87l2qtF8mUtyc0a3zrqYgIXLQ==
+"@elastic/eui@^26.0.1":
+  version "26.0.1"
+  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-26.0.1.tgz#0505a731de2aed8e121d65391a829efe2401b873"
+  integrity sha512-BzymLM/YmfJtsF6jJd4ZzEdZyCY1RvpNgm3x7b++FU4iiGcAW2MHIn5Rv1Zevv5rDBxtclylQ5KGjUhGrqDc0g==
   dependencies:
     "@types/chroma-js" "^2.0.0"
     "@types/enzyme" "^3.1.13"
@@ -143,6 +143,7 @@
     react-virtualized "^9.21.2"
     resize-observer-polyfill "^1.5.0"
     tabbable "^3.0.0"
+    text-diff "^1.0.1"
     uuid "^3.1.0"
 
 "@kbn/expect@link:../kibana/packages/kbn-expect":
@@ -1938,6 +1939,11 @@ table@^5.2.3:
     lodash "^4.17.14"
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
+
+text-diff@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/text-diff/-/text-diff-1.0.1.tgz#6c105905435e337857375c9d2f6ca63e453ff565"
+  integrity sha1-bBBZBUNeM3hXN1ydL2ymPkU/9WU=
 
 text-table@^0.2.0:
   version "0.2.0"
