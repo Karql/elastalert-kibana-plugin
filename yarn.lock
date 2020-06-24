@@ -115,10 +115,10 @@
 "@elastic/eslint-import-resolver-kibana@link:../kibana/packages/kbn-eslint-import-resolver-kibana":
   version "0.0.0"
 
-"@elastic/eui@^26.0.1":
-  version "26.0.1"
-  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-26.0.1.tgz#0505a731de2aed8e121d65391a829efe2401b873"
-  integrity sha512-BzymLM/YmfJtsF6jJd4ZzEdZyCY1RvpNgm3x7b++FU4iiGcAW2MHIn5Rv1Zevv5rDBxtclylQ5KGjUhGrqDc0g==
+"@elastic/eui@^26.1.0":
+  version "26.1.0"
+  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-26.1.0.tgz#618d7402908a5ccc803884047395fb334b97cbf7"
+  integrity sha512-jfrnYYVb3Q//tJBIYxv0ahnmxOMzUhuGmXiAROcCPr+d78JdCrpOc+qt8Cv9cG9Q0cDMWdtJxVhHGOMWuT1p0g==
   dependencies:
     "@types/chroma-js" "^2.0.0"
     "@types/enzyme" "^3.1.13"
