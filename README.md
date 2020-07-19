@@ -2,9 +2,9 @@
 
 > This plugin provides a way to create, test and edit ElastAlert rules within Kibana.
 
-![GitHub release](https://img.shields.io/github/release/bitsensor/elastalert-kibana-plugin.svg)
-![Github Releases](https://img.shields.io/github/downloads/bitsensor/elastalert-kibana-plugin/total.svg)
-![GitHub stars](https://img.shields.io/github/stars/bitsensor/elastalert-kibana-plugin.svg?style=social&label=Stars)
+![GitHub release](https://img.shields.io/github/release/nsano-rururu/elastalert-kibana-plugin.svg)
+![Github Releases](https://img.shields.io/github/downloads/nsano-rururu/elastalert-kibana-plugin/total.svg)
+![GitHub stars](https://img.shields.io/github/stars/nsano-rururu/elastalert-kibana-plugin.svg?style=social&label=Stars)
 
 ---
 
