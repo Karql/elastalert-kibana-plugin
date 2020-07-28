@@ -13,7 +13,7 @@
 
 ## Requirements
 - Our [ElastAlert server](https://github.com/bitsensor/elastalert) fork
-- Kibana 6.8.1～6.8.10、7.5.1～7.8.0
+- Kibana 6.8.1～6.8.11、7.5.1～7.8.1
 
 ## Installation
 Check the [releases](https://github.com/nsano-rururu/elastalert-kibana-plugin/releases) page to download and install the latest version of this plugin that is compatible with your Kibana version. Please be aware that you will need a running ElastAlert server to make use of this plugin.
