@@ -387,10 +387,10 @@
 "@elastic/eslint-import-resolver-kibana@link:../kibana/packages/kbn-eslint-import-resolver-kibana":
   version "0.0.0"
 
-"@elastic/eui@^27.2.0":
-  version "27.2.0"
-  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-27.2.0.tgz#75f986f4ed786b238c37050ced7c903f4b1a174f"
-  integrity sha512-oa6DKwLPzKFs/tHAae83zooJ78FSzyWhn6vYAgGz/ywhQbheiztVWXVIs+OCpiqekilklr4dENxotYuTBzrwyw==
+"@elastic/eui@^27.3.0":
+  version "27.3.0"
+  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-27.3.0.tgz#f1f5cff854e98136510e0ac7dd75eaffd50604fb"
+  integrity sha512-EjF7gD14Lun+UlDjMmPL7Cxn/pUOn+DMFVEAMeiUW2zNTcfQLi+eUWfEHU6W9Di9/99ztG9iDMVCAm1M0tesNA==
   dependencies:
     "@types/chroma-js" "^2.0.0"
     "@types/lodash" "^4.14.116"
