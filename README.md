@@ -11,6 +11,13 @@
 ## Demo
 ![Showcase](showcase.gif)
 
+## Why I created a fork repository
+
+Since the official site does not release the latest Kibana compatible version, 
+it is intended to publish the latest version until the release, 
+and there are no plans to add features or fix bugs. 
+If the official website resumes the latest release, this repository will be deleted.
+
 ## Requirements
 - Our [ElastAlert server](https://github.com/bitsensor/elastalert) fork
 - Kibana 6.8.1～6.8.11、7.5.1～7.8.1
