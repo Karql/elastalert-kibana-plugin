@@ -2,7 +2,6 @@ import React from 'react';
 import { uiModules } from 'ui/modules';
 import chrome from 'ui/chrome';
 import { render, unmountComponentAtNode } from 'react-dom';
-import 'ui/autoload/styles';
 import { Main } from './components/main';
 
 const app = uiModules.get('apps/elastalertKibanaPlugin');
