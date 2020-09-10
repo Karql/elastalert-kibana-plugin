@@ -20,7 +20,7 @@ If the official website resumes the latest release, this repository will be dele
 
 ## Requirements
 - Our [ElastAlert server](https://github.com/bitsensor/elastalert) fork
-- [Kibana 6.8.1～6.8.11、7.5.1～7.8.1](https://github.com/nsano-rururu/elastalert-kibana-plugin/releases/tag/1.2.0)
+- [Kibana 6.8.1～6.8.12、7.5.1～7.8.1](https://github.com/nsano-rururu/elastalert-kibana-plugin/releases/tag/1.2.0)
 - [Kibana 7.9.0, 7.9.1](https://github.com/nsano-rururu/elastalert-kibana-plugin/releases/tag/1.3.0)
 
 ## Installation
