@@ -35,6 +35,6 @@
     "eslint-plugin-react": "^7.21.2"
   },
   "dependencies": {
-    "@elastic/eui": "^29.1.0"
+    "@elastic/eui": "^29.2.0"
   }
 }
