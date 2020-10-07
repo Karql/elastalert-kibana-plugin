@@ -120,10 +120,10 @@
 "@elastic/eslint-import-resolver-kibana@link:../kibana/packages/kbn-eslint-import-resolver-kibana":
   version "0.0.0"
 
-"@elastic/eui@^29.3.0":
-  version "29.3.0"
-  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-29.3.0.tgz#5fd74110d9e3c9634566b37f5696947bce27c083"
-  integrity sha512-Ga/IsPXQajmYySliuGmux1UgqIQWNZssoCdT6ZGylZSVMdiKk+TJTh06eebGoTLrMXBJcNRV3JauQxeErQaarw==
+"@elastic/eui@^29.4.0":
+  version "29.4.0"
+  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-29.4.0.tgz#ef9a792b2f50eb5bf8e97ecf1801c3c40c06cf91"
+  integrity sha512-3BRVlF8cdm2zi9Pzl+92DmMwpf55bTFhOM17TrhKraf04H/KmbgafDZqarEJ0VkYX+VLi0t7AyMBniwZ9Zo4fQ==
   dependencies:
     "@types/chroma-js" "^2.0.0"
     "@types/lodash" "^4.14.160"
