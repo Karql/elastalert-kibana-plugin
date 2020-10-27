@@ -24,7 +24,7 @@
     "@kbn/expect": "link:../kibana/packages/kbn-expect",
     "@kbn/plugin-helpers": "link:../kibana/packages/kbn-plugin-helpers",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.12.0",
+    "eslint": "^7.12.1",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.1.0",
