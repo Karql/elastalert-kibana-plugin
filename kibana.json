@@ -1,0 +1,9 @@
+{
+  "id": "elastalert-kibana-plugin",
+  "version": "1.0.0",
+  "kibanaVersion": "kibana",
+  "server": true,
+  "ui": true,
+  "requiredPlugins": ["navigation"],
+  "optionalPlugins": []
+}
