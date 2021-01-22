@@ -1,7 +1,7 @@
 import { IRouter } from 'kibana/server';
 import fetch from 'node-fetch';
 export function defineRoutes(router: IRouter) {
-  const uri = `http://0.0.0.0:9200`;
+  const uri = process.env.PROTOCOL + '://' + process.env.HOSTNAME + process.env.PORT;
   router.get(
     {
       path: '/api/elastalert/{path}',
