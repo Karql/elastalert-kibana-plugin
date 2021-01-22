@@ -11,7 +11,7 @@ import {
   EuiButtonIcon,
   EuiLoadingSpinner,
   EuiCallOut,
-  EuiSpacer
+  EuiSpacer,
 } from '@elastic/eui';
 import { Item } from './item';
 import { Editor } from '../editor';
