@@ -6,7 +6,7 @@ export default class Item extends Component {
     super(props);
 
     this.state = {
-      toggleOn: false
+      toggleOn: false,
     };
   }
 

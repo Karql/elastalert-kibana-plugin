@@ -1,0 +1,7 @@
+{
+  "prefix": "elastAlert",
+  "paths": {
+    "elastAlert": "."
+  },
+  "translations": ["translations/ja-JP.json"]
+}
