@@ -1,5 +1,5 @@
 {
-  "id": "elastalert-kibana-plugin",
+  "id": "elastalertKibanaPlugin",
   "version": "1.0.0",
   "kibanaVersion": "kibana",
   "server": true,
