@@ -4,7 +4,7 @@ export function defineRoutes(router: IRouter) {
   const uri = process.env.PROTOCOL + '://' + process.env.HOSTNAME + process.env.PORT;
   router.get(
     {
-      path: '/api/elastalert/{path}',
+      path: '/{path}',
       validate: false,
     },
     async (context, req, response) => {
@@ -25,7 +25,7 @@ export function defineRoutes(router: IRouter) {
   );
   router.post(
     {
-      path: '/api/elastalert/{path}',
+      path: '/{path*}',
       validate: false,
     },
     async (context, req, response) => {
@@ -33,7 +33,7 @@ export function defineRoutes(router: IRouter) {
         method: 'POST',
         body: JSON.stringify({
           params: {
-            index: 'elastalert',
+            yaml: req.body,
           },
         }),
       };
@@ -54,10 +54,17 @@ export function defineRoutes(router: IRouter) {
   );
   router.delete(
     {
-      path: '/api/elastalert/{path}',
+      path: '/{path*}',
       validate: false,
     },
     async (context, req, response) => {
+      const deleteRequest = async () => {
+        return fetch(uri + req.route.path, {
+          method: 'DELETE',
+        })
+          .then((r: any) => console.log(r))
+      };
+      await deleteRequest();
       return response.ok({
         body: {
           success: true,
