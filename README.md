@@ -30,11 +30,13 @@ Check the [releases](https://github.com/nsano-rururu/elastalert-kibana-plugin/re
 [docker-compose sample](https://github.com/nsano-rururu/elastalert-kibana-plugin/wiki/docker-compose-sample)
 
 ## Configuration
-By default the plugin will connect to `localhost:3030`. If your ElastAlert server is running on a different host or port add/change the following options in your `config/kibana.yml` file: 
+By default the plugin will connect to `localhost:3030`. If your ElastAlert server is running on a different host or port add/change the global environment variables in your configuration file: 
 
 ```
-elastalert-kibana-plugin.serverHost: 123.0.0.1
-elastalert-kibana-plugin.serverPort: 9000
+PROTOCOL: http
+HOSTNAME: localhost
+PORT: 3030
+
 ```
 
 ## Contribution

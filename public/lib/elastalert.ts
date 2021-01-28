@@ -2,7 +2,7 @@ export const deleteRule = (http, rules, onSuccess, onFail) => {
   const rulesCopy = rules.slice();
 
   rules.forEach(rule => {
-    http.delete(`../api/elastalert/rules/${rule}`)
+    http.delete(`../rules/${rule}`)
       .then(() => {
         // Loop through all rules marked for deletion
         const index = rulesCopy.indexOf(rule);

@@ -60,7 +60,7 @@ export default class List extends Component {
     this.setState({ rules: [], selectedRules: [], loading: true });
     const { httpClient } = this.props;
     httpClient
-      .get('../api/elastalert/rules')
+      .get('../rules')
       .then(resp => {
         this.setState({ rules: resp.data.rules.sort(), error: null, loading: false });
       })

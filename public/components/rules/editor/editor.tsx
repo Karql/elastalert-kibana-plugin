@@ -37,7 +37,7 @@ export default class Editor extends Component {
 
   loadRule() {
     const { httpClient } = this.props;
-    httpClient.get(`../api/elastalert/rules/${this.props.rule}`).then(resp => {
+    httpClient.get(`../rules/${this.props.rule}`).then(resp => {
       this.setState({ value: resp.data, ruleName: this.props.rule });
     });
   }
@@ -48,11 +48,10 @@ export default class Editor extends Component {
     const ruleID = this.props.editorMode === 'edit' ? this.props.rule : this.state.ruleName;
 
     httpClient
-      .post(`../api/elastalert/rules/${ruleID}`, {
+      .post(`../rules/${ruleID}`, {
         yaml: this.state.value
       })
-      .then(resp => {
-        if (resp.status === 200) {
+      .then(() => {
           this.setState({ saving: false });
           addToast(
             'Saved successfully',
@@ -61,7 +60,6 @@ export default class Editor extends Component {
           );
           this.closeModal();
           loadRules();
-        }
       })
       .catch(e => {
         this.setState({ saving: false });
@@ -78,7 +76,7 @@ export default class Editor extends Component {
     this.setState({ testing: true, testFailed: null, testResponse: null });
 
     httpClient
-      .post(`../api/elastalert/test`, {
+      .post(`../test`, {
         rule: this.state.value,
         testType: 'schemaOnly'
       })
