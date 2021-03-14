@@ -31,7 +31,7 @@ export default class StatusToast extends Component {
       title: title,
       text: content,
       color: type,
-      id: toastId++
+      id: (toastId++).toString()
     };
 
     this.setState({

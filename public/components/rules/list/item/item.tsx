@@ -1,27 +1,34 @@
-import React, { Component } from 'react';
-import { EuiButtonToggle } from '@elastic/eui';
+import React, { Component, useState  } from 'react';
+import { EuiButton } from '@elastic/eui';
 
 export default class Item extends Component {
+  
+
   constructor(props) {
     super(props);
 
     this.state = {
-      toggleOn: false,
+      pressed: false,
     };
   }
 
-  onToggleChange = (e) => {
-    this.setState({ toggleOn: e.target.checked });
-    this.props.handler(this.props.rule, e.target.checked);
+  onClick = (e) => {
+    let pressed = !this.state.pressed
+    this.setState({ pressed: pressed });
+    this.props.handler(this.props.rule, pressed);
   };
 
   render() {
     return (
-      <EuiButtonToggle
-        label={this.props.rule}
-        fill={this.state.toggleOn}
-        onChange={this.onToggleChange}
-      />
+      <EuiButton
+        aria-label={this.props.rule}
+        title={this.props.rule}
+        aria-pressed={this.state.pressed}
+        fill={this.state.pressed}
+        onClick={this.onClick}
+      >
+        {this.props.rule}
+      </EuiButton>
     );
   }
 }

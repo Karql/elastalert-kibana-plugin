@@ -1,18 +1,17 @@
-import {
-  PluginInitializerContext,
-  CoreSetup,
-  CoreStart,
-  Plugin,
-  Logger,
-} from 'kibana/server';
-
+import { CoreSetup, CoreStart, Logger, Plugin, PluginInitializerContext } from 'kibana/server';
+import { Observable } from 'rxjs';
 import { ElastAlertPluginSetup, ElastAlertPluginStart } from './types';
-import { defineRoutes } from './routes';
+
+import { ConfigType } from './config';
+import { registerRoutes } from './routes';
+
 
 export class ElastAlertPlugin implements Plugin<ElastAlertPluginSetup, ElastAlertPluginStart> {
+  private readonly config$: Observable<ConfigType>;
   private readonly logger: Logger;
-
+  
   constructor(initializerContext: PluginInitializerContext) {
+    this.config$ = initializerContext.config.create();
     this.logger = initializerContext.logger.get();
   }
 
@@ -21,7 +20,7 @@ export class ElastAlertPlugin implements Plugin<ElastAlertPluginSetup, ElastAler
     const router = core.http.createRouter();
 
     // Register server side APIs
-    defineRoutes(router);
+    registerRoutes({ logger: this.logger, config$: this.config$, router: router });
 
     return {};
   }

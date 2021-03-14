@@ -2,6 +2,7 @@
   "id": "elastalertKibanaPlugin",
   "version": "1.4.0",
   "kibanaVersion": "kibana",
+  "configPath": ["elastalertKibanaPlugin"],
   "server": true,
   "ui": true,
   "requiredPlugins": ["navigation"],

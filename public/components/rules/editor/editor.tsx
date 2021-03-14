@@ -37,19 +37,22 @@ export default class Editor extends Component {
 
   loadRule() {
     const { httpClient } = this.props;
-    httpClient.get(`../rules/${this.props.rule}`).then(resp => {
-      this.setState({ value: resp.data, ruleName: this.props.rule });
+    httpClient.get(`../api/elastalert/rules/${this.props.rule}`).then(resp => {
+      this.setState({ value: resp, ruleName: this.props.rule });
     });
   }
 
   saveRule = () => {
+    console.log(this.state);
     const { httpClient } = this.props;
     this.setState({ saving: true });
     const ruleID = this.props.editorMode === 'edit' ? this.props.rule : this.state.ruleName;
 
     httpClient
-      .post(`../rules/${ruleID}`, {
-        yaml: this.state.value
+      .post(`../api/elastalert/rules/${ruleID}`, {
+        body: JSON.stringify({
+          yaml: this.state.value
+        })
       })
       .then(() => {
           this.setState({ saving: false });
@@ -71,32 +74,37 @@ export default class Editor extends Component {
       });
   };
 
+  // TODO: fix this
   testRule = () => {
     const { httpClient } = this.props;
     this.setState({ testing: true, testFailed: null, testResponse: null });
 
     httpClient
-      .post(`../test`, {
-        rule: this.state.value,
-        testType: 'schemaOnly'
+      .post(`../api/elastalert/test`, {
+        body: JSON.stringify({
+          rule: this.state.value,
+          options: {
+            testType: 'schemaOnly'
+          }          
+        })
       })
       .then(resp => {
         this.setState({
           testing: false,
           testFailed: false,
-          testResponse: resp.data
+          testResponse: resp
         });
       })
       .catch(e => {
         this.setState({
           testing: false,
           testFailed: true,
-          testResponse: e.data.message ? e.data.message : e.data,
+          testResponse: e.message ? e.message : e,
         });
       });
   };
 
-  onChange = value => {
+  onChange = value => {    
     this.setState({ value: value });
   };
 

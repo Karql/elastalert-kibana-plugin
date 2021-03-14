@@ -1,11 +1,11 @@
-import { PluginInitializerContext } from 'kibana/server';
+import { TypeOf } from '@kbn/config-schema';
+
+import { PluginConfigDescriptor, PluginInitializerContext } from 'kibana/server';
+import { ConfigSchema } from './config';
 import { ElastAlertPlugin } from './plugin';
 
-//  This exports static code and TypeScript types,
-//  as well as, Kibana Platform `plugin()` initializer.
+export const config: PluginConfigDescriptor<TypeOf<typeof ConfigSchema>> = {
+  schema: ConfigSchema
+};
 
-export function plugin(initializerContext: PluginInitializerContext) {
-  return new ElastAlertPlugin(initializerContext);
-}
-
-export { ElastAlertPluginSetup, ElastAlertPluginStart } from './types';
+export const plugin = (context: PluginInitializerContext) => new ElastAlertPlugin(context);
