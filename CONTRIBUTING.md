@@ -1,32 +1,31 @@
 ## Development
 
-See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md) for instructions setting up your development environment. Once you have completed that, you can use the commands below.
+See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md).
 
-  - `yarn kbn bootstrap`
+If you would like to run this plugin:
 
-    Install dependencies and crosslink Kibana and all projects/plugins.
+1) Clone kibana repo: `git clone https://github.com/elastic/kibana.git` and enter to the repo: `cd kibana`
+2) Change branch: `git checkout 7.11`
+3) Install nvm if you don't have
+4) Install node: `nvm install $(cat .nvmrc)`
+5) Configure node: `nvm use $(cat .nvmrc)`
+6) Install yarn: `npm install -g yarn`
+7) Run: `yarn kbn bootstrap`
+8) Configure kibana (`config/kibana.yml`):
 
-  - `yarn start`
+```
+elastalertKibanaPlugin.serverSsl: false
+elastalertKibanaPlugin.serverHost: localhost
+elastalertKibanaPlugin.serverPort: 8030
+logging.verbose: true
+```
 
-    Start kibana and have it include this plugin. You can pass any arguments that you would normally send to `bin/kibana`
+10) Clone this repo to: `plugins/`. `git clone https://github.com/karql/elastalert-kibana-plugin.git plugins/elastalert-kibana-plugin`
+11) Run elastic with elastalert. For test purpose you can use: `plugins/elastalert-kibana-plugin/dev/elastic-dev-env/docker-compose.yml` by running:
 
-      ```bash
-      yarn start --elasticsearch.url http://localhost:9220
-      ```
+`docker-compose -p elastic-dev-env -f dev\elastic-dev-env\docker-compose.yml up -d`
 
-  - `yarn build`
-
-    Build a distributable archive of the plugin.
-
-  - `yarn test:browser`
-
-    Run the browser tests in a real web browser.
-
-  - `yarn test:server`
-
-    Run the server tests using mocha.
-
-For more information about any of these commands run `yarn ${task} --help`. For a full list of tasks checkout the `package.json` file, or run `yarn run`.
+12) Run kibana: `yarn start --oss`
 
 ## Releasing
 
