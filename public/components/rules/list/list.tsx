@@ -18,6 +18,7 @@ import { Editor } from '../editor';
 import { Dangerous } from '../../modal';
 import { deleteRule } from '../../../lib/elastalert';
 import { addToast } from '../../toast/toast';
+import { HttpSetup } from 'kibana/public';
 
 let loadRulesHandler;
 
@@ -25,8 +26,20 @@ export function loadRules() {
   loadRulesHandler();
 }
 
-export default class List extends Component {
-  constructor(props) {
+interface Props {
+  httpClient: HttpSetup;
+}
+
+interface State {
+  rules: string[];
+  selectedRules: string[];
+  error: any;
+  loading: boolean;
+}
+
+
+export default class List extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
