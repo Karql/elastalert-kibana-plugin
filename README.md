@@ -19,10 +19,10 @@ For older versions check: [nsano-rururu/elastalert-kibana-plugin](https://github
 ---
 
 ## Demo
-![Showcase](showcase.gif)
+![Demo](demo.gif)
 
 ## Requirements
-- [ElastAlert Server](https://github.com/karql/elastalert) fork with latest version of ElastALert
+- [ElastAlert Server](https://github.com/karql/elastalert) fork with latest version of ElastAlert
 - Kibana 7.10.0 or higher
 
 ## Installation

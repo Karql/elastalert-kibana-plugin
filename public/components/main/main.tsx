@@ -16,7 +16,7 @@ import {
 import { CoreStart } from 'kibana/public';
 import { NavigationPublicPluginStart } from '../../../../../src/plugins/navigation/public';
 
-import { PLUGIN_ID } from '../../../common';
+import { PLUGIN_ID, PLUGIN_NAME } from '../../../common';
 import { StatusToast } from '../toast';
 import List from '../rules/list/list';
 interface ElastAlertAppDeps {
@@ -61,7 +61,7 @@ export const ElastAlertApp = ({ basename, notifications, http, navigation }: Ela
               <EuiPageHeader>
                 <EuiPageHeaderSection>
                   <EuiTitle size="l">
-                    <h1>{PLUGIN_ID}</h1>
+                    <h1>{PLUGIN_NAME}</h1>
                   </EuiTitle>
                 </EuiPageHeaderSection>
                 <EuiPageHeaderSection>
