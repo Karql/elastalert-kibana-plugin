@@ -1,0 +1,53 @@
+version: '2'
+services:
+  elasticsearch:
+    image: elasticsearch:7.14.0
+    restart: always
+    expose:
+      - 9200
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g" # 50% of memory
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    mem_limit: 2g
+    cap_add:
+      - IPC_LOCK
+
+  # https://github.com/Karql/elastalert fork of bitsensor/elastalert
+  elastalert:
+    image: karql/elastalert:4.0.0
+    restart: always
+    expose:
+      - 3030
+      - 3333
+    ports:
+      - "8030:3030"
+      - "8333:3333"
+    volumes:
+      - ./conf/elastalert/elastalert.yaml:/opt/elastalert/config.yaml
+      - ./conf/elastalert/elastalert-test.yaml:/opt/elastalert/config-test.yaml
+      - ./conf/elastalert/config.json:/opt/elastalert-server/config/config.json
+      - ./conf/elastalert/rule_templates:/opt/elastalert/rule_templates
+      - ./tmp/rules:/opt/elastalert/rules
+    links:
+      - "elasticsearch"      
+
+  kibana:
+    build:
+      context: ./kibana
+    restart: always
+    volumes:
+      - ./conf/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+    links:
+      - "elasticsearch"
+      - "elastalert"
+    ports:
+      - "5601:5601"      

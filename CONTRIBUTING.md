@@ -5,13 +5,15 @@ See the [kibana contributing guide](https://github.com/elastic/kibana/blob/maste
 If you would like to run this plugin:
 
 1) Clone kibana repo: `git clone https://github.com/elastic/kibana.git` and enter to the repo: `cd kibana`
-2) Change branch: `git checkout 7.11`
+2) Change branch to version you want to use the plugin with e.g.: `git checkout v7.14.0`
 3) Install nvm if you don't have
 4) Install node: `nvm install $(cat .nvmrc)`
 5) Configure node: `nvm use $(cat .nvmrc)`
-6) Install yarn: `npm install -g yarn`
-7) Run: `yarn kbn bootstrap`
-8) Configure kibana (`config/kibana.yml`):
+6) Install yarn if you don't have: `npm install -g yarn`
+7) Run: `yarn kbn clean`
+8) Run: `yarn kbn bootstrap`
+9) Clone this repo into plugins directory by: `git clone https://github.com/Karql/elastalert-kibana-plugin.git ./plugins/elastalert-kibana-plugin`
+10) Configure kibana (`config/kibana.yml`):
 
 ```
 elastalertKibanaPlugin.serverSsl: false
@@ -20,17 +22,24 @@ elastalertKibanaPlugin.serverPort: 8030
 logging.verbose: true
 ```
 
-10) Clone this repo to: `plugins/`. `git clone https://github.com/karql/elastalert-kibana-plugin.git plugins/elastalert-kibana-plugin`
-11) Run elastic with elastalert. For test purpose you can use: `plugins/elastalert-kibana-plugin/dev/elastic-dev-env/docker-compose.yml` by running:
+10) Run elastic with elastalert. For test purpose you can use: `plugins/elastalert-kibana-plugin/dev/dev-env/docker-compose.yml` by running:
 
-`docker-compose -p elastic-dev-env -f dev\elastic-dev-env\docker-compose.yml up -d`
+`docker-compose -p dev-env -f dev/dev-env/docker-compose.yml up -d`
 
 12) Run kibana: `yarn start --oss`
 
-## Releasing
+# Build plugin
 
-In the develop branch the Kibana version in `package.json` should always point to the latest unreleased stable version. For example: if Kibana 6.3.2 has been released the version should be 6.3.3. 
+1) Use steps 1-9 from Develompment section.
+2) Enter the plugin directory `cd plugins/elastalert-kibana-plugin`
+3) Run: `yarn build --kibana-version=7.14.0`
+4) Build plugin can be found in: `plugins/elastalert-kibana-plugin/build/` 
 
-The develop branch is merged to master when a new version is ready (do not forget to increment the version inside `package.json`). The new version is tagged and uploaded to GitHub releases.
+# Testing plugin
 
-A GitHub release should at least contain a build for the latest stable Kibana version, but if possible builds for older minor versions should be created as well. Building for a specific Kibana version can be done easily with: `yarn build -k kibana-version-here`.
+To test if plugin works correctly with particular kibana version you can use `dev/test-env/**/*`
+
+1) Copy built plugin into `dev/test-env/kibana/plugins/`
+2) Change kibana & plugin version in `dev/test-env/kibana/Dockerfile`
+3) Chagne elastic version in `dev/test-env/docker-compose.yml`
+4) Run `docker-compose -p test-env -f dev/test-env/docker-compose.yml up -d`

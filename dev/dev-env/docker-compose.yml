@@ -38,4 +38,4 @@ services:
       - ./conf/elastalert/rule_templates:/opt/elastalert/rule_templates
       - ./rules:/opt/elastalert/rules
     links:
-      - "elasticsearch"      
+      - "elasticsearch" 

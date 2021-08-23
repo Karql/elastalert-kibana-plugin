@@ -30,6 +30,8 @@ Check the [releases](https://github.com/karql/elastalert-kibana-plugin/releases)
 
 [ElastAlert Server Docker Images](https://hub.docker.com/r/karql/elastalert)
 
+⚠️ If there is no released version for Kibana you use you can try to build plugin be your own. In [contribution guide](CONTRIBUTING.md) there is detailed instruction how to do it.
+
 ## Configuration
 By default the plugin will connect to `http://localhost:3030`. If your ElastAlert server is running on a different host or port add/change the following options in your `config/kibana.yml` file: 
 
