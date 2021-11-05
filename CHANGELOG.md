@@ -2,7 +2,7 @@
 
 ### Features
 - Migrate from legacy plugin to Kibana Plaftorm (thanks to: @ch-bas who started this migration)
-- Support version Kibana >=7.10.0 <=7.14.0
+- Support version Kibana >=7.10.0 <=7.15.1
 
 ### Braking changes
 - config section name has been changed `elastalert-kibana-plugin -> elastalertKibanaPlugin`

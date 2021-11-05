@@ -22,13 +22,13 @@ For older versions check: [nsano-rururu/elastalert-kibana-plugin](https://github
 ![Demo](demo.gif)
 
 ## Requirements
-- [ElastAlert Server](https://github.com/karql/elastalert) fork with latest version of ElastAlert
+- [ElastAlert2 Server](https://github.com/Karql/elastalert2-server) - A server that runs ElastAlert2 and exposes REST API's for manipulating rules and alerts.
 - Kibana 7.10.0 or higher
 
 ## Installation
 Check the [releases](https://github.com/karql/elastalert-kibana-plugin/releases) page to download and install the latest version of this plugin that is compatible with your Kibana version. Please be aware that you will need a running ElastAlert server to make use of this plugin.
 
-[ElastAlert Server Docker Images](https://hub.docker.com/r/karql/elastalert)
+[ElastAlert2 Server Docker Images](https://hub.docker.com/r/karql/elastalert2-server)
 
 ⚠️ If there is no released version for Kibana you use you can try to build plugin be your own. In [contribution guide](CONTRIBUTING.md) there is detailed instruction how to do it.
 
