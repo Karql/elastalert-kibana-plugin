@@ -1,7 +1,7 @@
 version: '2'
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
     restart: always
     expose:
       - 9200
@@ -23,7 +23,7 @@ services:
 
   # https://github.com/Karql/elastalert fork of bitsensor/elastalert
   elastalert:
-    image: karql/elastalert2-server:5.0.0-next.0
+    image: karql/elastalert2-server:5.0.0-next.1
     restart: always
     expose:
       - 3030
