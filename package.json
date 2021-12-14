@@ -1,6 +1,11 @@
 {
   "name": "elastalert-kibana-plugin",
   "version": "1.4.0",
+  "author": {
+    "name": "Mateusz Karkula",
+    "email": "mateusz@karkula.pl",
+    "url": "https://github.com/Karql/elastalert-kibana-plugin"
+  },
   "description": "Create, test and edit ElastAlert rules within Kibana.",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE.md",

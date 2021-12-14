@@ -1,5 +1,9 @@
 {
   "id": "elastalertKibanaPlugin",
+  "owner":
+  {
+    "name": "Mateusz Karkula <mateusz@karkula.pl>"
+  },
   "version": "1.4.0",
   "kibanaVersion": "kibana",
   "configPath": ["elastalertKibanaPlugin"],

@@ -1,7 +1,7 @@
 version: '2'
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.1
     restart: always
     expose:
       - 9200
@@ -38,7 +38,7 @@ services:
       - ./conf/elastalert/rule_templates:/opt/elastalert/rule_templates
       - ./tmp/rules:/opt/elastalert/rules
     links:
-      - "elasticsearch"      
+      - "elasticsearch"
 
   kibana:
     build:
@@ -50,4 +50,4 @@ services:
       - "elasticsearch"
       - "elastalert"
     ports:
-      - "5601:5601"      
+      - "5601:5601"

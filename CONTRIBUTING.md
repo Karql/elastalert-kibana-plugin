@@ -42,4 +42,5 @@ To test if plugin works correctly with particular kibana version you can use `de
 1) Copy built plugin into `dev/test-env/kibana/plugins/`
 2) Change kibana & plugin version in `dev/test-env/kibana/Dockerfile`
 3) Chagne elastic version in `dev/test-env/docker-compose.yml`
-4) Run `docker-compose -p test-env -f dev/test-env/docker-compose.yml up -d`
+4) Build `docker-compose -p test-env -f dev/test-env/docker-compose.yml build`
+5) Run `docker-compose -p test-env -f dev/test-env/docker-compose.yml up -d`
