@@ -71,7 +71,7 @@ export const ElastAlertApp = ({ basename, notifications, http, navigation }: Ela
                       color="text"
                       onClick={() =>
                         window.open(
-                          'https://github.com/bitsensor/elastalert-kibana-plugin',
+                          'https://github.com/Karql/elastalert-kibana-plugin',
                           '_blank'
                         )
                       }
