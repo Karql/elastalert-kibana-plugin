@@ -87,7 +87,6 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
       const postRequest = async () => {
         let url = (await getElastAlertServerUrl()) + `/test`;
         logger.debug(`POST ${url}`);
-        console.log(postParams);
         return fetch(url, postParams);          
       };
 
@@ -123,7 +122,7 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
     }
   );
 
-  router.delete(
+  router.delete( 
     {
       path: '/api/elastalert/rules/{ruleID}',
       validate: {
@@ -139,8 +138,7 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
 
         return fetch(url, {
           method: 'DELETE',
-        })
-          .then((r: any) => console.log(r))
+        });
       };
       await deleteRequest();
       // TODO: handle error

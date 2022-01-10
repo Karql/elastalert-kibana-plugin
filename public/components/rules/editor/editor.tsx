@@ -43,7 +43,6 @@ export default class Editor extends Component {
   }
 
   saveRule = () => {
-    console.log(this.state);
     const { httpClient } = this.props;
     this.setState({ saving: true });
     const ruleID = this.props.editorMode === 'edit' ? this.props.rule : this.state.ruleName;
