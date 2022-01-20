@@ -1,14 +1,15 @@
 import React from 'react';
 import { EuiCallOut } from '@elastic/eui';
 
-export const Console = (hasError: boolean, consoleOutput: any) => (
+export const Console = (props: { hasError: boolean, consoleOutput: string }) => (
   <EuiCallOut
     size="s"
     title="Console output"
     iconType="console"
-    color={hasError ? 'danger' : 'success'}
+    color={props.hasError ? 'danger' : 'success'}
     style={{ whiteSpace: 'pre-wrap' }}
+
   >
-    {consoleOutput}
+    {props.consoleOutput}
   </EuiCallOut>
 );

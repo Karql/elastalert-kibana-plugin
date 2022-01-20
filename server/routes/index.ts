@@ -6,7 +6,7 @@ import { ConfigType } from '../config';
 import fetch from 'node-fetch';
 
 interface RegisterRoutesParams {
-  config$: Observable<ConfigType>;  
+  config$: Observable<ConfigType>;
   logger: Logger;
   router: IRouter;
 }
@@ -41,7 +41,7 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
         },
         body: JSON.stringify(req.body),
       };
-      
+
       const postRequest = async () => {
         let url = (await getElastAlertServerUrl()) + `/rules/${req.params.ruleID}`;
         logger.debug(`POST ${url}`);
@@ -54,6 +54,7 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
       };
 
       const result = await postRequest();
+
       return response.ok({
         body: {
           data: result,
@@ -83,21 +84,21 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
         },
         body: JSON.stringify(req.body),
       };
-      
+
       const postRequest = async () => {
         let url = (await getElastAlertServerUrl()) + `/test`;
         logger.debug(`POST ${url}`);
-        return fetch(url, postParams);          
+        return fetch(url, postParams);
       };
 
       const result = await postRequest();
-      return response.ok({
-        body: {
-          data: result,
-        },
+
+      return response.custom({
+        statusCode: result.status,
+        body: result.body
       });
     }
-  );  
+  );
 
   router.get(
     {
@@ -122,7 +123,7 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
     }
   );
 
-  router.delete( 
+  router.delete(
     {
       path: '/api/elastalert/rules/{ruleID}',
       validate: {

@@ -1,3 +1,8 @@
+## 1.4.1 (2022-01-20)
+
+### Bug fixes
+- Testing rules #9 (required [ElastAlert2 Server](https://github.com/Karql/elastalert2-server) in version >=5.0.0-next.4) 
+
 ## 1.4.0 (2021-03-16)
 
 ### Features

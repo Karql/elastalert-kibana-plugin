@@ -83,8 +83,8 @@ export default class Editor extends Component {
         body: JSON.stringify({
           rule: this.state.value,
           options: {
-            testType: 'schemaOnly'
-          }          
+            testType: 'all'
+          }
         })
       })
       .then(resp => {
@@ -95,15 +95,16 @@ export default class Editor extends Component {
         });
       })
       .catch(e => {
+        let body = e.body;
         this.setState({
           testing: false,
           testFailed: true,
-          testResponse: e.message ? e.message : e,
+          testResponse: body.message ? body.message : body,
         });
       });
   };
 
-  onChange = value => {    
+  onChange = value => {
     this.setState({ value: value });
   };
 
@@ -158,7 +159,7 @@ export default class Editor extends Component {
                 }}
               />
               <EuiSpacer size="m" />
-              {this.state.testResponse && (
+              {this.state.testResponse !== null && (
                 <Console
                   hasError={this.state.testFailed}
                   consoleOutput={this.state.testResponse}
