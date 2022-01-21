@@ -6,7 +6,7 @@ Aim of this fork is to support new versions of Kibana (after migration to Kibana
 
 There is still some work to be done, but this version should work ;)
 
-For older versions check: [nsano-rururu/elastalert-kibana-plugin](https://github.com/nsano-rururu/elastalert-kibana-plugin)
+For older Kibana versions check: [nsano-rururu/elastalert-kibana-plugin](https://github.com/nsano-rururu/elastalert-kibana-plugin)
 
 # ElastAlert Kibana Plugin
 
@@ -26,11 +26,17 @@ For older versions check: [nsano-rururu/elastalert-kibana-plugin](https://github
 - Kibana 7.10.0 or higher
 
 ## Installation
-Check the [releases](https://github.com/karql/elastalert-kibana-plugin/releases) page to download and install the latest version of this plugin that is compatible with your Kibana version. Please be aware that you will need a running ElastAlert server to make use of this plugin.
+Check the [releases](https://github.com/karql/elastalert-kibana-plugin/releases) page to download the latest version of this plugin that is compatible with your Kibana version. Please be aware that you will need a running ElastAlert server to make use of this plugin.
 
-[ElastAlert2 Server Docker Images](https://hub.docker.com/r/karql/elastalert2-server)
+⚠️ If there is no released compatible version with your Kibana then you can build plugin be your own. In [contribution guide](CONTRIBUTING.md) there is detailed instruction how to do it.
 
-⚠️ If there is no released version for Kibana you use you can try to build plugin be your own. In [contribution guide](CONTRIBUTING.md) there is detailed instruction how to do it.
+Plugin installation is as simple as executing a command like:
+
+`bin/kibana-plugin install file:////path/to/plugin/elastalertKibanaPlugin-x.y.z.zip`
+
+[Official instruction](https://www.elastic.co/guide/en/kibana/current/kibana-plugins.html#install-plugin-url)
+
+Psst! If you need some examples you can find it in `dev/` folder or [contribution guide](CONTRIBUTING.md)
 
 ## Configuration
 By default the plugin will connect to `http://localhost:3030`. If your ElastAlert server is running on a different host or port add/change the following options in your `config/kibana.yml` file: 
