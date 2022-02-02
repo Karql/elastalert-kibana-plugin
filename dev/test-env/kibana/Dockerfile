@@ -1,4 +1,4 @@
-FROM docker.elastic.co/kibana/kibana:7.16.3
+FROM docker.elastic.co/kibana/kibana:7.17.0
 
-COPY ./plugins/elastalertKibanaPlugin-7.16.3.zip plugins/
-RUN ./bin/kibana-plugin install file:////usr/share/kibana/plugins/elastalertKibanaPlugin-7.16.3.zip
+COPY ./plugins/elastalertKibanaPlugin-7.17.0.zip plugins/
+RUN ./bin/kibana-plugin install file:////usr/share/kibana/plugins/elastalertKibanaPlugin-7.17.0.zip
