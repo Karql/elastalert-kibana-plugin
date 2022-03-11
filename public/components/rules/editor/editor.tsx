@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  EuiCodeEditor,
   EuiButton,
   EuiButtonEmpty,
   EuiModal,
@@ -10,8 +9,7 @@ import {
   EuiModalHeaderTitle,
   EuiOverlayMask,
   EuiFormRow,
-  EuiFieldText,
-  EuiSpacer
+  EuiFieldText
 } from '@elastic/eui';
 import 'brace/mode/yaml';
 import 'brace/theme/github';
@@ -19,6 +17,7 @@ import 'brace/ext/language_tools';
 import { addToast } from '../../toast/toast';
 import { loadRules } from '../list/list';
 import { Console } from '../../console';
+import { CodeEditor } from '../../../../../../src/plugins/kibana_react/public';// 'src/plugins/kibana_react/public';
 
 export default class Editor extends Component {
   constructor(props) {
@@ -145,25 +144,26 @@ export default class Editor extends Component {
                   autoFocus={true}
                 />
               </EuiFormRow>
-              <EuiCodeEditor
-                mode="yaml"
-                theme="github"
+              <EuiFormRow fullWidth={true}>
+              <CodeEditor
+                languageId="yaml"
                 width="100%"
                 height="400px"
                 value={this.state.value}
                 onChange={this.onChange}
-                setOptions={{
-                  fontSize: '14px',
-                  enableBasicAutocompletion: true,
-                  enableLiveAutocompletion: true
+                options={{
+                  fontSize: 14,
+                  tabSize: 2
                 }}
               />
-              <EuiSpacer size="m" />
+              </EuiFormRow>
               {this.state.testResponse !== null && (
-                <Console
-                  hasError={this.state.testFailed}
-                  consoleOutput={this.state.testResponse}
-                />
+                <EuiFormRow fullWidth={true}>
+                  <Console
+                    hasError={this.state.testFailed}
+                    consoleOutput={this.state.testResponse}
+                  />
+                </EuiFormRow>
               )}
             </EuiModalBody>
             <EuiModalFooter>

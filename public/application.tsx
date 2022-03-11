@@ -5,7 +5,7 @@ import { AppPluginStartDependencies } from './types';
 import { ElastAlertApp } from './components/main';
 
 export const renderApp = (
-  { notifications, http }: CoreStart,
+  { notifications, http, uiSettings }: CoreStart,
   { navigation }: AppPluginStartDependencies,
   { appBasePath, element }: AppMountParameters
 ) => {
@@ -15,6 +15,7 @@ export const renderApp = (
       notifications={notifications}
       http={http}
       navigation={navigation}
+      uiSettings={uiSettings}
     />,
     element
   );

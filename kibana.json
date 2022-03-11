@@ -9,6 +9,6 @@
   "configPath": ["elastalertKibanaPlugin"],
   "server": true,
   "ui": true,
-  "requiredPlugins": ["navigation"],
+  "requiredPlugins": ["navigation", "kibanaReact"],
   "optionalPlugins": []
 }
