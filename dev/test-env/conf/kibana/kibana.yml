@@ -6,6 +6,4 @@ elastalertKibanaPlugin.serverSsl: false
 elastalertKibanaPlugin.serverHost: elastalert
 elastalertKibanaPlugin.serverPort: 3030
 
-logging:
-  root:
-    level: all
+logging.root.level: all

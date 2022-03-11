@@ -1,3 +1,8 @@
+## 1.5.0 (2022-03-11)
+
+### Changes
+- Migrate removed EuiCodeEditor to CodeEditor #27 This change also fix dark theme #7
+
 ## 1.4.1 (2022-01-20)
 
 ### Bug fixes

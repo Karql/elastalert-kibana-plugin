@@ -1,6 +1,6 @@
 {
   "name": "elastalert-kibana-plugin",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "author": {
     "name": "Mateusz Karkula",
     "email": "mateusz@karkula.pl",
