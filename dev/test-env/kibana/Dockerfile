@@ -1,4 +1,4 @@
-FROM docker.elastic.co/kibana/kibana:8.3.1
+FROM docker.elastic.co/kibana/kibana:8.3.2
 
-COPY ./plugins/elastalertKibanaPlugin-8.3.1.zip plugins/
-RUN ./bin/kibana-plugin install file:////usr/share/kibana/plugins/elastalertKibanaPlugin-8.3.1.zip
+COPY ./plugins/elastalertKibanaPlugin-8.3.2.zip plugins/
+RUN ./bin/kibana-plugin install file:////usr/share/kibana/plugins/elastalertKibanaPlugin-8.3.2.zip
