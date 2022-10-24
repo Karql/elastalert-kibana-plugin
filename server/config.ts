@@ -7,5 +7,5 @@ export const ConfigSchema = schema.object({
     serverHost: schema.string({ defaultValue: "localhost" }),
     serverPort: schema.number({ defaultValue: 3030 }),
     serverPath: schema.string({ defaultValue: "" }),
-    serverCustomRequestHeaders: schema.object ({ defaultValue: {} })
+    serverCustomRequestHeaders: schema.recordOf(schema.string(), schema.string(), { defaultValue: {} })
 });
