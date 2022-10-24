@@ -17,7 +17,12 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
   const getElastAlertServerUrl = async () =>  {
     let config = await config$.pipe(take(1)).toPromise();
 
-    return `http${(config.serverSsl ? 's' : '')}://${config.serverHost}:${config.serverPort}`;
+    return `http${(config.serverSsl ? 's' : '')}://${config.serverHost}:${config.serverPort}${config.serverPath}`;
+  }
+  const getElastAlertServerCustomRequestHeaders = async () =>  {
+    let config = await config$.pipe(take(1)).toPromise();
+
+    return config.serverCustomRequestHeaders;
   }
 
   // create & edit rule
@@ -34,11 +39,12 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
       }
     },
     async (context, req, response) => {
+      let customHeaders = await getElastAlertServerCustomRequestHeaders()
       const postParams = {
         method: 'POST',
-        headers: {
+        headers: {...{
           "content-type": "application/json"
-        },
+        }, ...customHeaders },
         body: JSON.stringify(req.body),
       };
 
@@ -77,11 +83,12 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
       }
     },
     async (context, req, response) => {
+      let customHeaders = await getElastAlertServerCustomRequestHeaders()
       const postParams = {
         method: 'POST',
-        headers: {
+        headers: {...{
           "content-type": "application/json"
-        },
+        }, ...customHeaders },
         body: JSON.stringify(req.body),
       };
 
@@ -110,11 +117,17 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
       }
     },
     async (context, req, response) => {
+      let customHeaders = await getElastAlertServerCustomRequestHeaders()
+      const getParams = {
+        method: 'GET',
+        headers: customHeaders
+      };
+
       const getRequest = async () => {
         let url = (await getElastAlertServerUrl()) + `/${req.params.path}`;
         logger.debug(`GET ${url}`);
 
-        return fetch(url);
+        return fetch(url, getParams);
       };
       const result = await getRequest();
       return response.ok({
@@ -133,13 +146,17 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
       }
     },
     async (context, req, response) => {
+      let customHeaders = await getElastAlertServerCustomRequestHeaders()
+      const deleteParams = {
+        method: 'DELETE',
+        headers: customHeaders
+      };
+
       const deleteRequest = async () => {
         let url = (await getElastAlertServerUrl()) + `/rules/${req.params.ruleID}`;
         logger.debug(`DELETE ${url}`);
 
-        return fetch(url, {
-          method: 'DELETE',
-        });
+        return fetch(url, deleteParams);
       };
       await deleteRequest();
       // TODO: handle error
