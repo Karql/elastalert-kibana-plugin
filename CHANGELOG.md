@@ -1,3 +1,8 @@
+## 1.6.0 (2022-10-24)
+
+### Features
+- Add configuration for `serverPath` and `serverCustomRequestHeaders` #34 (@anmoel)
+
 ## 1.5.0 (2022-03-11)
 
 ### Changes
