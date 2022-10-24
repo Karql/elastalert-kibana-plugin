@@ -39,12 +39,16 @@ Plugin installation is as simple as executing a command like:
 Psst! If you need some examples you can find it in `dev/` folder or [contribution guide](CONTRIBUTING.md)
 
 ## Configuration
-By default the plugin will connect to `http://localhost:3030`. If your ElastAlert server is running on a different host or port add/change the following options in your `config/kibana.yml` file: 
+By default the plugin will connect to `http://localhost:3030`. If your ElastAlert server is running on a different host or port add/change the following options in your `config/kibana.yml` file:
 
 ```
 elastalertKibanaPlugin.serverSsl: false
 elastalertKibanaPlugin.serverHost: localhost
 elastalertKibanaPlugin.serverPort: 3030
+elastalertKibanaPlugin.serverPath: ""
+elastalertKibanaPlugin.serverCustomRequestHeaders:
+  X-Custom-header1: "value"
+  X-Custom-header2: "value"
 ```
 
 ⚠️ from version 1.4.0 config section name has been changed:
