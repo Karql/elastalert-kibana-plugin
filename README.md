@@ -1,13 +1,3 @@
-# Fork of [bitsensor/elastalert-kibana-plugin](https://github.com/bitsensor/elastalert-kibana-plugin)
-
-Official repository is not maintained anymore.
-
-Aim of this fork is to support new versions of Kibana (after migration to Kibana New Platform starts from 7.10).
-
-There is still some work to be done, but this version should work ;)
-
-For older Kibana versions check: [nsano-rururu/elastalert-kibana-plugin](https://github.com/nsano-rururu/elastalert-kibana-plugin)
-
 # ElastAlert Kibana Plugin
 
 > This plugin provides a way to create, test and edit ElastAlert rules within Kibana.
@@ -20,6 +10,18 @@ For older Kibana versions check: [nsano-rururu/elastalert-kibana-plugin](https:/
 
 ## Demo
 ![Demo](demo.gif)
+
+## Historical background
+
+Fork of [bitsensor/elastalert-kibana-plugin](https://github.com/bitsensor/elastalert-kibana-plugin) Copyright © 2019, BitSensor B.V.
+
+Official repository is not maintained anymore.
+
+Aim of this fork is to support new versions of Kibana (after migration to Kibana New Platform starts from 7.10).
+
+There is still some work to be done, but this version should work ;)
+
+For older Kibana versions check: [nsano-rururu/elastalert-kibana-plugin](https://github.com/nsano-rururu/elastalert-kibana-plugin)
 
 ## Requirements
 - [ElastAlert2 Server](https://github.com/Karql/elastalert2-server) - A server that runs ElastAlert2 and exposes REST API's for manipulating rules and alerts.
