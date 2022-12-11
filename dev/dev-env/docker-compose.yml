@@ -1,7 +1,7 @@
 version: '2'
 services:
   elasticsearch:
-    image: elasticsearch:8.4.3
+    image: elasticsearch:8.5.0
     restart: always
     expose:
       - 9200
