@@ -29,6 +29,8 @@ logging.verbose: true
 
 `docker-compose -p dev-env -f dev/dev-env/docker-compose.yml up -d`
 
+11) Optionally for better errors set `mode: development` in `packages/kbn-ui-shared-deps-npm/webpack.config.js`
+
 12) Run kibana: `yarn start --oss`
 
 # Build plugin

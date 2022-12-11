@@ -1,3 +1,8 @@
+## 1.6.1 (2022-12-11)
+
+### Bugfixes
+- Quick fix for deprecated components in kibana >= 8.5.0 
+
 ## 1.6.0 (2022-10-24)
 
 ### Features
