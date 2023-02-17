@@ -1,7 +1,7 @@
 version: '2'
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.1
     restart: always
     expose:
       - 9200
@@ -22,9 +22,9 @@ services:
     cap_add:
       - IPC_LOCK
 
-  # https://github.com/Karql/elastalert fork of bitsensor/elastalert
+  # https://github.com/Karql/elastalert2-server
   elastalert:
-    image: karql/elastalert2-server:5.0.0-next.11
+    image: karql/elastalert2-server:5.0.0
     restart: always
     expose:
       - 3030
