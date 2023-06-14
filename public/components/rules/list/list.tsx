@@ -160,7 +160,7 @@ export default class List extends Component {
           </EuiPageContentHeaderSection>
         </EuiPageContentHeader>
         <EuiPageContentBody>
-          <EuiFlexGrid>{renderList()}</EuiFlexGrid>
+          <EuiFlexGrid columns={4} gutterSize="s">{renderList()}</EuiFlexGrid>
           {(!this.state.loading && !this.state.error && this.state.rules.length === 0) && (
             <React.Fragment>
               <EuiSpacer />

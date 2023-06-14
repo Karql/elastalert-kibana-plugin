@@ -1,3 +1,8 @@
+## 1.6.2 (2023-06-14)
+
+### Features
+- Update to work with kibana >= 8.7.0
+
 ## 1.6.1 (2022-12-11)
 
 ### Bugfixes

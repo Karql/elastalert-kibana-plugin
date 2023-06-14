@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppMountParameters, CoreStart } from 'kibana/public';
+import { AppMountParameters, CoreStart } from '@kbn/core/public';
 import { AppPluginStartDependencies } from './types';
 import { ElastAlertApp } from './components/main';
 

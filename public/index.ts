@@ -7,4 +7,4 @@ import { ElastAlertPlugin } from './plugin';
 export function plugin() {
   return new ElastAlertPlugin();
 }
-export { ElastAlertPluginSetup, ElastAlertPluginStart } from './types';
+export type { ElastAlertPluginSetup, ElastAlertPluginStart } from './types';

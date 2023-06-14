@@ -1,6 +1,6 @@
 {
   "name": "elastalert-kibana-plugin",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "author": {
     "name": "Mateusz Karkula",
     "email": "mateusz@karkula.pl",
@@ -11,6 +11,7 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "build": "yarn plugin-helpers build",
+    "dev": "yarn plugin-helpers dev",
     "plugin-helpers": "node ../../scripts/plugin_helpers",
     "kbn": "node ../../scripts/kbn",
     "lint": "eslint ."

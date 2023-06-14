@@ -4,11 +4,14 @@
   {
     "name": "Mateusz Karkula <mateusz@karkula.pl>"
   },
-  "version": "1.6.1",
+  "version": "1.6.2",
   "kibanaVersion": "kibana",
   "configPath": ["elastalertKibanaPlugin"],
   "server": true,
   "ui": true,
-  "requiredPlugins": ["navigation", "kibanaReact"],
+  "requiredPlugins": ["navigation"],
+  "requiredBundles": [
+    "kibanaReact"
+  ],
   "optionalPlugins": []
 }

@@ -1,6 +1,6 @@
 import { TypeOf } from '@kbn/config-schema';
 
-import { PluginConfigDescriptor, PluginInitializerContext } from 'kibana/server';
+import { PluginConfigDescriptor, PluginInitializerContext } from '@kbn/core/server';
 import { ConfigSchema } from './config';
 import { ElastAlertPlugin } from './plugin';
 

@@ -1,4 +1,4 @@
-import { CoreSetup, CoreStart, Logger, Plugin, PluginInitializerContext } from 'kibana/server';
+import { CoreSetup, CoreStart, Logger, Plugin, PluginInitializerContext } from '@kbn/core/server';
 import { Observable } from 'rxjs';
 import { ElastAlertPluginSetup, ElastAlertPluginStart } from './types';
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { i18n } from '@kbn/i18n';
 import { I18nProvider } from '@kbn/i18n-react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { NotificationsStart, HttpSetup, IUiSettingsClient } from 'kibana/public';
+import { NotificationsStart, HttpSetup, IUiSettingsClient } from '@kbn/core/public';
 
 import {
   EuiPage,
@@ -14,11 +14,14 @@ import {
   EuiToolTip,
 } from '@elastic/eui';
 
-import { NavigationPublicPluginStart } from '../../../../../src/plugins/navigation/public';
+import { NavigationPublicPluginStart } from '@kbn/navigation-plugin/public';
+import { KibanaContextProvider } from '@kbn/kibana-react-plugin/public';
 import { PLUGIN_ID, PLUGIN_NAME } from '../../../common';
 import { StatusToast } from '../toast';
 import List from '../rules/list/list';
-import { KibanaContextProvider } from '../../../../../src/plugins/kibana_react/public';
+
+
+
 
 interface ElastAlertAppDeps {
   basename: string;

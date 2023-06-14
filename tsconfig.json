@@ -1,8 +1,7 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./target",
-    "skipLibCheck": true
+    "outDir": "target/types"
   },
   "include": [
     "index.ts",
@@ -12,5 +11,15 @@
     "server/**/*.ts",
     "../../typings/**/*"
   ],
-  "exclude": []
+  "kbn_references": [
+    "@kbn/core",
+    "@kbn/config-schema",
+    "@kbn/i18n",
+    "@kbn/i18n-react",
+    "@kbn/kibana-react-plugin",
+    "@kbn/navigation-plugin",
+  ],
+  "exclude": [
+    "target/**/*",
+  ]
 }

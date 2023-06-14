@@ -1,5 +1,5 @@
 import { i18n } from '@kbn/i18n';
-import { AppMountParameters, CoreSetup, Plugin } from 'kibana/public';
+import { AppMountParameters, CoreSetup, CoreStart, Plugin } from '@kbn/core/public';
 import { ElastAlertPluginSetup, ElastAlertPluginStart, AppPluginStartDependencies } from './types';
 import { PLUGIN_NAME } from '../common';
 

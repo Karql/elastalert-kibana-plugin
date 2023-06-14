@@ -1,4 +1,4 @@
-import { NavigationPublicPluginStart } from '../../../src/plugins/navigation/public';
+import { NavigationPublicPluginStart } from '@kbn/navigation-plugin/public';
 
 export interface ElastAlertPluginSetup {
   getGreeting: () => string;

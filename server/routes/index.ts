@@ -1,4 +1,4 @@
-import { IRouter, Logger } from 'kibana/server';
+import { IRouter, Logger } from '@kbn/core/server';
 import { schema } from '@kbn/config-schema';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
