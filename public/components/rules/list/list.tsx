@@ -3,11 +3,6 @@ import {
   EuiFlexGrid,
   EuiFlexItem,
   EuiFlexGroup,
-  EuiPageContent_Deprecated as  EuiPageContent,
-  EuiPageContentHeader_Deprecated as EuiPageContentHeader,
-  EuiPageContentHeaderSection_Deprecated as EuiPageContentHeaderSection,
-  EuiTitle,
-  EuiPageContentBody_Deprecated as EuiPageContentBody,
   EuiButtonIcon,
   EuiLoadingSpinner,
   EuiCallOut,
@@ -96,70 +91,62 @@ export default class List extends Component {
     };
 
     return (
-      <EuiPageContent>
-        <EuiPageContentHeader>
-          <EuiPageContentHeaderSection>
-            <EuiTitle>
-              <h2>Rules Overview</h2>
-            </EuiTitle>
-          </EuiPageContentHeaderSection>
-          <EuiPageContentHeaderSection>
-            <EuiFlexGroup gutterSize="s" alignItems="center">
-              {!this.state.error && (
-                <EuiFlexItem>
-                  <Editor
-                    httpClient={this.props.httpClient}
-                    editorMode="create"
-                  />
-                </EuiFlexItem>
-              )}
-              {this.state.selectedRules.length > 0 && (
-                <EuiFlexItem>
-                  <Dangerous
-                    buttonText={'Delete ' + (this.state.selectedRules.length === 1 ? 'rule' : this.state.selectedRules.length + ' rules')}
-                    title="Delete rule"
-                    text={'You are about to delete ' + (this.state.selectedRules.length === 1 ? 'a rule' : this.state.selectedRules.length + ' rules')}
-                    action={(modal) => deleteRule(this.props.httpClient, this.state.selectedRules,
-                      () => {
-                        modal.closeDestroyModal();
-                        addToast(
-                          'Deleted successfully',
-                          `${this.state.selectedRules.length} rule${this.state.selectedRules.length > 1 ? 's were' : ' was'} successfully deleted`,
-                          'success'
-                        );
-                        loadRules();
-                      },
-                      (e) => {
-                        modal.closeDestroyModal();
-                        addToast('Deleting failed', `Rule could not be deleted: (${e.status}) ${e.statusText}`, 'danger');
-                      })
-                    }
-                  />
-                </EuiFlexItem>
-              )}
-              {this.state.selectedRules.length === 1 && (
-                <EuiFlexItem>
-                  <Editor
-                    rule={this.state.selectedRules[0]}
-                    httpClient={this.props.httpClient}
-                    editorMode="edit"
-                  />
-                </EuiFlexItem>
-              )}
-              <EuiFlexItem>
-                {!this.state.loading && <EuiButtonIcon
-                  size="s"
-                  color="primary"
-                  onClick={() => this.loadRules()}
-                  iconType="refresh"
-                  aria-label="Refresh"
-                />}
-                {this.state.loading && <EuiLoadingSpinner size="l" />}
+      <>
+          <EuiFlexGroup gutterSize="s" alignItems="flexEnd" style={{ marginBottom: 10 }}>
+            <EuiFlexItem grow={true}></EuiFlexItem>
+            {!this.state.error && (
+              <EuiFlexItem grow={false}>
+                <Editor
+                  httpClient={this.props.httpClient}
+                  editorMode="create"
+                />
               </EuiFlexItem>
-            </EuiFlexGroup>
-          </EuiPageContentHeaderSection>
-        </EuiPageContentHeader>
-        <EuiPageContentBody>
+            )}
+            {this.state.selectedRules.length > 0 && (
+              <EuiFlexItem grow={false}>
+                <Dangerous
+                  buttonText={'Delete ' + (this.state.selectedRules.length === 1 ? 'rule' : this.state.selectedRules.length + ' rules')}
+                  title="Delete rule"
+                  text={'You are about to delete ' + (this.state.selectedRules.length === 1 ? 'a rule' : this.state.selectedRules.length + ' rules')}
+                  action={(modal) => deleteRule(this.props.httpClient, this.state.selectedRules,
+                    () => {
+                      modal.closeDestroyModal();
+                      addToast(
+                        'Deleted successfully',
+                        `${this.state.selectedRules.length} rule${this.state.selectedRules.length > 1 ? 's were' : ' was'} successfully deleted`,
+                        'success'
+                      );
+                      loadRules();
+                    },
+                    (e) => {
+                      modal.closeDestroyModal();
+                      addToast('Deleting failed', `Rule could not be deleted: (${e.status}) ${e.statusText}`, 'danger');
+                    })
+                  }
+                />
+              </EuiFlexItem>
+            )}
+            {this.state.selectedRules.length === 1 && (
+              <EuiFlexItem grow={false}>
+                <Editor
+                  rule={this.state.selectedRules[0]}
+                  httpClient={this.props.httpClient}
+                  editorMode="edit"
+                />
+              </EuiFlexItem>
+            )}
+            <EuiFlexItem grow={false}>
+              {!this.state.loading && <EuiButtonIcon
+                size="s"
+                color="primary"
+                onClick={() => this.loadRules()}
+                iconType="refresh"
+                aria-label="Refresh"
+              />}
+              {this.state.loading && <EuiLoadingSpinner size="l" />}
+            </EuiFlexItem>
+          </EuiFlexGroup>
+
           <EuiFlexGrid columns={4} gutterSize="s">{renderList()}</EuiFlexGrid>
           {(!this.state.loading && !this.state.error && this.state.rules.length === 0) && (
             <React.Fragment>
@@ -174,8 +161,7 @@ export default class List extends Component {
             </React.Fragment>
           )}
           {!this.state.loading && this.state.error && renderError()}
-        </EuiPageContentBody>
-      </EuiPageContent>
+      </>
     );
   }
 }

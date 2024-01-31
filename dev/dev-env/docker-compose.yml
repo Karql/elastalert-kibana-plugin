@@ -1,7 +1,7 @@
 version: '2'
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.4
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.0
     restart: always
     expose:
       - 9200
@@ -37,6 +37,6 @@ services:
       - ./conf/elastalert/elastalert-test.yaml:/opt/elastalert/config-test.yaml
       - ./conf/elastalert/config.json:/opt/elastalert-server/config/config.json
       - ./conf/elastalert/rule_templates:/opt/elastalert/rule_templates
-      - ./rules:/opt/elastalert/rules
+      - ./tmp/rules:/opt/elastalert/rules
     links:
       - "elasticsearch"

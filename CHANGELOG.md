@@ -1,3 +1,13 @@
+## 1.7.0 (2024-02-10)
+
+### Features
+- Migrate deprecated EUI componentes #38
+- Remove not used top navigation
+- Some code cleanup 
+
+### Bug fixes
+- Fix breadcrumb name
+
 ## 1.6.2 (2023-06-14)
 
 ### Features

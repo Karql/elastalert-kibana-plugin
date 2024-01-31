@@ -5,17 +5,17 @@ import { AppPluginStartDependencies } from './types';
 import { ElastAlertApp } from './components/main';
 
 export const renderApp = (
-  { notifications, http, uiSettings }: CoreStart,
-  { navigation }: AppPluginStartDependencies,
-  { appBasePath, element }: AppMountParameters
+  { notifications, http, uiSettings, chrome }: CoreStart,
+  {}: AppPluginStartDependencies,
+  { history, element }: AppMountParameters
 ) => {
   ReactDOM.render(
     <ElastAlertApp
-      basename={appBasePath}
+      history={history}
       notifications={notifications}
       http={http}
-      navigation={navigation}
       uiSettings={uiSettings}
+      chrome={chrome}
     />,
     element
   );
