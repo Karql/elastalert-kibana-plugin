@@ -4,7 +4,7 @@
   {
     "name": "Mateusz Karkula <mateusz@karkula.pl>"
   },
-  "version": "1.7.0",
+  "version": "1.7.1",
   "kibanaVersion": "kibana",
   "configPath": ["elastalertKibanaPlugin"],
   "server": true,

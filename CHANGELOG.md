@@ -1,3 +1,8 @@
+## 1.7.1 (2024-03-29)
+
+### Bug fixes
+- Fix CodeEditor import #50
+
 ## 1.7.0 (2024-02-10)
 
 ### Features

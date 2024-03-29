@@ -17,7 +17,7 @@ import 'brace/ext/language_tools';
 import { addToast } from '../../toast/toast';
 import { loadRules } from '../list/list';
 import { Console } from '../../console';
-import { CodeEditor } from '@kbn/kibana-react-plugin/public';
+import { CodeEditor } from '@kbn/code-editor';
 
 export default class Editor extends Component {
   constructor(props) {
