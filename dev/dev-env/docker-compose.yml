@@ -24,7 +24,7 @@ services:
 
   # https://github.com/Karql/elastalert2-server
   elastalert:
-    image: karql/elastalert2-server:5.6.0
+    image: karql/elastalert2-server:5.7.0
     restart: always
     expose:
       - 3030
