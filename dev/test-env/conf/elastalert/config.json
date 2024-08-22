@@ -6,6 +6,7 @@
   "verbose": false,
   "es_debug": false,
   "debug": false,
+  "prometheus_port": 9979,
   "rulesPath": {
     "relative": true,
     "path": "/rules"
