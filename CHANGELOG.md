@@ -1,3 +1,8 @@
+## 1.7.2 (2024-11-14)
+
+### Bug fixes
+- Remove legacy kibana react code editor #53
+
 ## 1.7.1 (2024-03-29)
 
 ### Bug fixes

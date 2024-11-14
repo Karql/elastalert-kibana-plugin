@@ -11,9 +11,7 @@ import {
   EuiFormRow,
   EuiFieldText
 } from '@elastic/eui';
-import 'brace/mode/yaml';
-import 'brace/theme/github';
-import 'brace/ext/language_tools';
+
 import { addToast } from '../../toast/toast';
 import { loadRules } from '../list/list';
 import { Console } from '../../console';
