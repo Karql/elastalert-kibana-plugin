@@ -5,7 +5,7 @@ See the [kibana contributing guide](https://github.com/elastic/kibana/blob/maste
 If you would like to run this plugin:
 
 1) Clone kibana repo: `git clone https://github.com/elastic/kibana.git` and enter to the repo: `cd kibana`
-2) Change branch to version you want to use the plugin with e.g.: `git checkout v8.17.3`
+2) Change branch to version you want to use the plugin with e.g.: `git checkout v8.17.4`
 3) Install nvm if you don't have
 4) Install node: `nvm install $(cat .nvmrc)`
 5) Configure node: `nvm use $(cat .nvmrc)`
@@ -36,7 +36,7 @@ elastalertKibanaPlugin.serverPort: 8030
 
 1) Use steps 1-9 from Develompment section.
 2) Enter the plugin directory `cd plugins/elastalert-kibana-plugin`
-3) Run: `yarn build --kibana-version=8.17.3`
+3) Run: `yarn build --kibana-version=8.17.4`
 4) Build plugin can be found in: `plugins/elastalert-kibana-plugin/build/` 
 
 # Testing plugin
