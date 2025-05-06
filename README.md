@@ -21,8 +21,6 @@ Aim of this fork is to support new versions of Kibana (after migration to Kibana
 
 There is still some work to be done, but this version should work ;)
 
-For older Kibana versions check: [nsano-rururu/elastalert-kibana-plugin](https://github.com/nsano-rururu/elastalert-kibana-plugin)
-
 ## Requirements
 - [ElastAlert2 Server](https://github.com/Karql/elastalert2-server) - A server that runs ElastAlert2 and exposes REST API's for manipulating rules and alerts.
 - Kibana 7.10.0 or higher
