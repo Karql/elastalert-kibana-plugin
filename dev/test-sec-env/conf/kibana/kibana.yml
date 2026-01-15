@@ -1,0 +1,12 @@
+server.name: kibana
+server.host: 0.0.0.0
+elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+
+elastalertKibanaPlugin.serverSsl: false
+elastalertKibanaPlugin.serverHost: elastalert
+elastalertKibanaPlugin.serverPort: 3030
+
+elasticsearch.username: kibana_system
+elasticsearch.password: pass123
+
+logging.root.level: all

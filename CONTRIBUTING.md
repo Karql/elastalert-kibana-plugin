@@ -48,3 +48,14 @@ To test if plugin works correctly with particular kibana version you can use `de
 3) Chagne elastic version in `dev/test-env/docker-compose.yml`
 4) Build `docker-compose -p test-env -f dev/test-env/docker-compose.yml build`
 5) Run `docker-compose -p test-env -f dev/test-env/docker-compose.yml up -d`
+
+# Testing plugin with security
+
+To test if plugin works correctly with particular kibana version with security you can use `dev/test-sec-env/**/*`
+
+1) Copy built plugin into `dev/test-sec-env/kibana/plugins/`
+2) Change kibana & plugin version in `dev/test--secenv/kibana/Dockerfile`
+3) Chagne elastic version in `dev/test-sec-env/docker-compose.yml`
+4) Build `docker-compose -p test-sec-env -f dev/test-sec-env/docker-compose.yml build`
+5) Run `docker-compose -p test-sec-env -f dev/test-sec-env/docker-compose.yml up -d`
+6) Run `docker-compose -p test-sec-env -f dev/test-sec-env/docker-compose.yml exec elasticsearch bin/elasticsearch-setup-passwords interactive`
