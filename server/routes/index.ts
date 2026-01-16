@@ -29,6 +29,12 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
   router.post(
     {
       path: '/api/elastalert/rules/{ruleID}',
+      security: {
+        authz: {
+          enabled: false,
+          reason: 'This route is used by elastalert-kibana-plugin and does not require authorization',
+        },
+      },      
       validate: {
         params: schema.object({
           ruleID: schema.string(),
@@ -73,6 +79,12 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
   router.post(
     {
       path: '/api/elastalert/test',
+      security: {
+        authz: {
+          enabled: false,
+          reason: 'This route is used by elastalert-kibana-plugin and does not require authorization',
+        },
+      },        
       validate: {
         body: schema.object({
           rule: schema.string(),
@@ -110,6 +122,12 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
   router.get(
     {
       path: '/api/elastalert/{path*}',
+      security: {
+        authz: {
+          enabled: false,
+          reason: 'This route is used by elastalert-kibana-plugin and does not require authorization',
+        },
+      },        
       validate: {
         params: schema.object({
           path: schema.string(),
@@ -139,6 +157,12 @@ export const registerRoutes = (options: RegisterRoutesParams) => {
   router.delete(
     {
       path: '/api/elastalert/rules/{ruleID}',
+      security: {
+        authz: {
+          enabled: false,
+          reason: 'This route is used by elastalert-kibana-plugin and does not require authorization',
+        },
+      },        
       validate: {
         params: schema.object({
           ruleID: schema.string(),

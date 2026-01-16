@@ -1,3 +1,8 @@
+## 1.7.3 (2024-11-14)
+
+### Bug fixes
+- Migration routes to authz authorization paradigm #61
+
 ## 1.7.2 (2024-11-14)
 
 ### Bug fixes
