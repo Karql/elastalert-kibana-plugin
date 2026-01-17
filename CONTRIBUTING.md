@@ -1,11 +1,13 @@
-## Development
+# Development
+
+## Run plugin
 
 See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md).
 
 If you would like to run this plugin:
 
 1) Clone kibana repo: `git clone https://github.com/elastic/kibana.git` and enter to the repo: `cd kibana`
-2) Change branch to version you want to use the plugin with e.g.: `git checkout v9.2.3`
+2) Change branch to version you want to use the plugin with e.g.: `git checkout v9.2.4`
 3) Install nvm if you don't have
 4) Install node: `nvm install $(cat .nvmrc)`
 5) Configure node: `nvm use $(cat .nvmrc)`
@@ -32,14 +34,14 @@ elastalertKibanaPlugin.serverPort: 8030
 11) In separate terminal enter the plugin directory `cd plugins/elastalert-kibana-plugin` and run `yarn dev --watch`
 12) Run kibana: `yarn start --oss`
 
-# Build plugin
+## Build plugin
 
 1) Use steps 1-9 from Develompment section.
 2) Enter the plugin directory `cd plugins/elastalert-kibana-plugin`
-3) Run: `yarn build --kibana-version=9.2.3`
+3) Run: `yarn build --kibana-version=9.2.4`
 4) Build plugin can be found in: `plugins/elastalert-kibana-plugin/build/` 
 
-# Testing plugin
+## Testing plugin
 
 To test if plugin works correctly with particular kibana version you can use `dev/test-env/**/*`
 
@@ -49,7 +51,7 @@ To test if plugin works correctly with particular kibana version you can use `de
 4) Build `docker-compose -p test-env -f dev/test-env/docker-compose.yml build`
 5) Run `docker-compose -p test-env -f dev/test-env/docker-compose.yml up -d`
 
-# Testing plugin with security
+## Testing plugin with security
 
 To test if plugin works correctly with particular kibana version with security you can use `dev/test-sec-env/**/*`
 

@@ -56,3 +56,7 @@ elastalertKibanaPlugin.serverCustomRequestHeaders:
 
 ## Contribution
 Please report any issues or suggestions you have on the [issues page](https://github.com/karql/elastalert-kibana-plugin/issues). If you want to create a pull request please check our [contribution guide](CONTRIBUTING.md).
+
+## Troubleshooting
+
+You can find solutions to some problems in  [Troubleshooting.md](Troubleshooting.md).
