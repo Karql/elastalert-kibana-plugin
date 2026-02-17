@@ -1,7 +1,7 @@
 version: '2'
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:9.2.5
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.3.0
     restart: always
     expose:
       - 9200
