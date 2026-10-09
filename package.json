@@ -10,8 +10,8 @@
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
-    "build": "yarn plugin-helpers build",
-    "dev": "yarn plugin-helpers dev",
+    "build": "node ../../scripts/plugin_helpers build",
+    "dev": "node ../../scripts/plugin_helpers dev",
     "plugin-helpers": "node ../../scripts/plugin_helpers",
     "kbn": "node ../../scripts/kbn",
     "lint": "eslint ."

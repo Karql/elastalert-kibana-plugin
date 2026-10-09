@@ -9,4 +9,4 @@ Annoying error:
 
 Known issue: https://github.com/elastic/kibana/issues/248642
 
-Can be solved by adding lateset version e.g.: `"baseline-browser-mapping": "2.9.14"` to `packages.json` section `resolutions` and execute `yarn`.
+Can be solved by adding lateset version e.g.: `"baseline-browser-mapping": "2.9.14"` to `packages.json` section `resolutions` and execute `pnpm install`.

@@ -7,13 +7,13 @@ See the [kibana contributing guide](https://github.com/elastic/kibana/blob/maste
 If you would like to run this plugin:
 
 1) Clone kibana repo: `git clone https://github.com/elastic/kibana.git` and enter to the repo: `cd kibana`
-2) Change branch to version you want to use the plugin with e.g.: `git checkout v9.4.4`
+2) Change branch to version you want to use the plugin with e.g.: `git checkout v9.4.5`
 3) Install nvm if you don't have
 4) Install node: `nvm install $(cat .nvmrc)`
 5) Configure node: `nvm use $(cat .nvmrc)`
-6) Install yarn if you don't have: `npm install -g yarn`
-7) Run: `yarn kbn clean`
-8) Run: `yarn kbn bootstrap`
+6) Install pnpm if you don't have: `npm install -g pnpm`
+7) Run: `pnpm kbn clean`
+8) Run: `pnpm kbn bootstrap`
 9) Clone this repo into plugins directory by: `git clone https://github.com/Karql/elastalert-kibana-plugin.git ./plugins/elastalert-kibana-plugin`
 10) Configure kibana (`config/kibana.yml`):
 
@@ -31,14 +31,14 @@ elastalertKibanaPlugin.serverPort: 8030
 `docker-compose -p dev-env -f dev/dev-env/docker-compose.yml up -d`
 
 11) Optionally for better errors set `mode: development` in `packages/kbn-ui-shared-deps-npm/webpack.config.js`
-11) In separate terminal enter the plugin directory `cd plugins/elastalert-kibana-plugin` and run `yarn dev --watch`
-12) Run kibana: `yarn start --oss`
+11) In separate terminal enter the plugin directory `cd plugins/elastalert-kibana-plugin` and run `pnpm run dev --watch`
+12) Run kibana: `pnpm start --oss`
 
 ## Build plugin
 
 1) Use steps 1-9 from Develompment section.
 2) Enter the plugin directory `cd plugins/elastalert-kibana-plugin`
-3) Run: `yarn build --kibana-version=9.4.4`
+3) Run: `pnpm run build --kibana-version=9.4.5`
 4) Build plugin can be found in: `plugins/elastalert-kibana-plugin/build/` 
 
 ## Testing plugin
